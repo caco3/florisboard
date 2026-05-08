@@ -143,10 +143,17 @@ app/build/outputs/apk/release/app-release.apk
 
 ### Install directly to a connected device / emulator
 
-Ensure ADB is in your `PATH` and a device is connected (or an emulator is running), then:
+A convenience script is included that builds the debug APK and installs it in one step:
 
 ```bash
-# Debug build – build + install in one step
+./deploy.sh
+```
+
+The script will error clearly if no device is connected, or if multiple devices are attached (set `ANDROID_SERIAL` to disambiguate in that case).
+
+Alternatively, run the Gradle task directly:
+
+```bash
 ./gradlew installDebug
 ```
 
