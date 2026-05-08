@@ -250,7 +250,11 @@ class TextKey(override val data: AbstractKeyData) : Key(data) {
             val prefs by FlorisPreferenceStore
             computedPopups.getPopupKeys(prefs.keyboard.keyHintConfiguration()).hint.let { hintData ->
                 if (hintData?.isSpaceKey() == false) {
-                    hintedLabel = hintData.asString(isForDisplay = true)
+                    if (hintData.code < 0) {
+                        hintedImageVector = evaluator.computeImageVector(hintData)
+                    } else {
+                        hintedLabel = hintData.asString(isForDisplay = true)
+                    }
                     computedHintData = hintData
                 } else {
                     val mainData = computedPopups.main
