@@ -370,6 +370,18 @@ private fun TextKeyButton(
                 text = hintedLabel,
             )
         }
+        key.hintedImageVector?.let { hintedImageVector ->
+            SnyggIcon(
+                elementName = FlorisImeUi.KeyHint.elementName,
+                attributes = attributes,
+                selector = selector,
+                modifier = Modifier
+                    .size(10.dp)
+                    .align(if (isTelPadKey) BiasAlignment(0.5f, 0f) else Alignment.TopEnd),
+                imageVector = hintedImageVector,
+                contentDescription = null,
+            )
+        }
         key.foregroundImageVector?.let { imageVector ->
             SnyggIcon(
                 modifier = Modifier.align(Alignment.Center),

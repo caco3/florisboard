@@ -228,6 +228,7 @@ class TextKey(override val data: AbstractKeyData) : Key(data) {
     fun computeLabelsAndDrawables(evaluator: ComputingEvaluator) {
         label = evaluator.computeLabel(computedData)
         hintedLabel = null
+        hintedImageVector = null
         foregroundImageVector = evaluator.computeImageVector(computedData)
 
         val data = computedData
@@ -252,8 +253,20 @@ class TextKey(override val data: AbstractKeyData) : Key(data) {
                     hintedLabel = hintData.asString(isForDisplay = true)
                     computedHintData = hintData
                 } else {
-                    hintedLabel = null
-                    computedHintData = TextKeyData.UNSPECIFIED
+                    val mainData = computedPopups.main
+                    if (mainData != null) {
+                        val mainLabel = mainData.asString(isForDisplay = true)
+                        if (mainLabel.isNotEmpty()) {
+                            hintedLabel = mainLabel
+                            computedHintData = mainData
+                        } else {
+                            hintedImageVector = evaluator.computeImageVector(mainData)
+                            computedHintData = mainData
+                        }
+                    } else {
+                        hintedLabel = null
+                        computedHintData = TextKeyData.UNSPECIFIED
+                    }
                 }
             }
         }
