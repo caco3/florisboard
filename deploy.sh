@@ -1,18 +1,14 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# ---------------------------------------------------------------------------
-# Environment setup
-# ---------------------------------------------------------------------------
+# -- Environment setup -------------------------------------------------------
 export JAVA_HOME="${JAVA_HOME:-/usr/lib/jvm/java-17-openjdk-amd64}"
 export ANDROID_HOME="${ANDROID_HOME:-$HOME/Android/Sdk}"
 export PATH="$JAVA_HOME/bin:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$HOME/.cargo/bin:/usr/bin:/bin:$PATH"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# ---------------------------------------------------------------------------
-# Pre-flight: require a connected device
-# ---------------------------------------------------------------------------
+# -- Pre-flight: require a connected device ----------------------------------
 device_count=$(adb devices | tail -n +2 | grep -c 'device$' || true)
 
 if [[ "$device_count" -eq 0 ]]; then
@@ -26,9 +22,7 @@ if [[ "$device_count" -gt 1 ]] && [[ -z "${ANDROID_SERIAL:-}" ]]; then
     exit 1
 fi
 
-# ---------------------------------------------------------------------------
-# Build debug APK
-# ---------------------------------------------------------------------------
+# -- Build -------------------------------------------------------------------
 echo "==> Building debug APK..."
 "$SCRIPT_DIR/gradlew" clean assembleDebug
 
@@ -39,12 +33,10 @@ if [[ ! -f "$APK" ]]; then
     exit 1
 fi
 
-# ---------------------------------------------------------------------------
-# Install on device
-# ---------------------------------------------------------------------------
+# -- Install -----------------------------------------------------------------
 echo "==> Installing $(basename "$APK") on device..."
 adb ${ANDROID_SERIAL:+-s "$ANDROID_SERIAL"} install -r "$APK"
 
 echo ""
 echo "Done. FlorisBoard debug build installed successfully."
-echo "Go to Settings -> Language & Input -> On-screen keyboard to enable it."
+echo "Go to Settings → System → Language & Input → On-screen keyboard to enable it."

@@ -94,12 +94,21 @@ different ways to help out, please see the [contribution guidelines](CONTRIBUTIN
 | JDK | 17 |
 | Android SDK (compile) | API 36 |
 | Android NDK | 29.0.14206865 |
-| CMake | 3.22+ (4.1.2 recommended) |
+| CMake | 4.1.2 (via Android SDK, see below) |
 | Clang | 15+ |
 | Rust / rustup | 1.28.2+ (toolchain 1.93.0) |
 | Git | any recent version |
 
-The easiest way to get the Android SDK and NDK is through **Android Studio** (or IntelliJ IDEA with the Android + Compose plugins). Rust can be installed via [rustup](https://www.rust-lang.org/tools/install).
+The easiest way to get the Android SDK, NDK, and CMake is through **Android Studio** (or IntelliJ IDEA with the Android + Compose plugins). If installing manually, also install CMake through `sdkmanager`:
+
+```bash
+sdkmanager "cmake;4.1.2"
+```
+
+> [!IMPORTANT]
+> AGP requires CMake to be installed **inside the Android SDK** — the system CMake is not used.
+
+Rust can be installed via [rustup](https://www.rust-lang.org/tools/install).
 
 > [!NOTE]
 > IntelliJ IDEA users must enable **Future AGP Versions** support for AGP 9.0.0 to work.
@@ -178,13 +187,13 @@ app/build/outputs/apk/release/app-release.apk
 
 ### Install directly to a connected device / emulator
 
-A convenience script is included that builds the debug APK and installs it in one step:
+A convenience script is included that cleans, builds the debug APK, and installs it in one step:
 
 ```bash
 ./deploy.sh
 ```
 
-The script exits with a clear error if no device is connected. If multiple devices are attached, set `ANDROID_SERIAL` to disambiguate:
+The script always runs `clean` first to avoid stale incremental build state. It exits with a clear error if no device is connected. If multiple devices are attached, set `ANDROID_SERIAL` to disambiguate:
 
 ```bash
 ANDROID_SERIAL=<serial> ./deploy.sh
