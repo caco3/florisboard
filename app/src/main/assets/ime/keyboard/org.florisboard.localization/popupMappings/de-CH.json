@@ -99,7 +99,7 @@
       ]
     },
     "~right": {
-      "main": { "code":   44, "label": "," },
+      "main": { "code": -301, "label": "settings", "type": "system_gui" },
       "relevant": [
         { "code":   38, "label": "&" },
         { "code":   37, "label": "%" },
