@@ -1,7 +1,6 @@
 {
   "all": {
     "a": {
-      "main": { "code": -31, "label": "clipboard_copy", "type": "system_gui" },
       "relevant": [
         { "$": "auto_text_key", "code":  224, "label": "à" },
         { "$": "auto_text_key", "code":  230, "label": "æ" },
@@ -30,7 +29,6 @@
       "main": { "$": "auto_text_key", "code": 35, "label": "#" }
     },
     "s": {
-      "main": { "code": -33, "label": "clipboard_paste", "type": "system_gui" },
       "relevant": [
         { "$": "case_selector",
           "lower": { "code":  223, "label": "ß" },
@@ -38,11 +36,6 @@
         },
         { "$": "auto_text_key", "code":  353, "label": "š" },
         { "$": "auto_text_key", "code":  347, "label": "ś" }
-      ]
-    },
-    "v": {
-      "relevant": [
-        { "code": -33, "label": "clipboard_paste", "type": "system_gui" }
       ]
     },
     "e": {
