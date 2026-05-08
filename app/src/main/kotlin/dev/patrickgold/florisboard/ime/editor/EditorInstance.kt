@@ -475,11 +475,17 @@ class EditorInstance(context: Context) : AbstractEditorInstance(context) {
         phantomSpace.setInactive()
         val ic = currentInputConnection() ?: return false
         ic.finishComposingText()
+        val selectedText = activeContent.selectedText.ifBlank { ic.getSelectedText(0)?.toString() }
+        if (!selectedText.isNullOrEmpty()) {
+            clipboardManager.addNewPlaintext(selectedText)
+            return true
+        }
         val req = android.view.inputmethod.ExtractedTextRequest().apply { hintMaxChars = Int.MAX_VALUE }
         val extracted = ic.getExtractedText(req, 0)
         val text = extracted?.text?.toString()
         if (!text.isNullOrEmpty()) {
             clipboardManager.addNewPlaintext(text)
+            ic.performContextMenuAction(android.R.id.selectAll)
         } else {
             appContext.showShortToastSync("Nothing to copy.")
             return false
