@@ -1,7 +1,6 @@
 {
   "all": {
     "a": {
-      "main": { "code":   64, "label": "@" },
       "relevant": [
         { "$": "auto_text_key", "code":  224, "label": "à" },
         { "$": "auto_text_key", "code":  230, "label": "æ" },
@@ -42,7 +41,6 @@
       ]
     },
     "o": {
-      "main": { "code":   57, "label": "9" },
       "relevant": [
         { "$": "auto_text_key", "code":  333, "label": "ō" },
         { "$": "auto_text_key", "code":  248, "label": "ø" },
@@ -60,7 +58,6 @@
       ]
     },
     "u": {
-      "main": { "code":   55, "label": "7" },
       "relevant": [
         { "$": "auto_text_key", "code":  363, "label": "ū" },
         { "$": "auto_text_key", "code":  251, "label": "û" },
