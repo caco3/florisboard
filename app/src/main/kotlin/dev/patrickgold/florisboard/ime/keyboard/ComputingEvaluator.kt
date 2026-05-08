@@ -194,7 +194,8 @@ fun ComputingEvaluator.computeImageVector(data: KeyData): ImageVector? {
         KeyCode.ARROW_DOWN -> {
             Icons.Default.KeyboardArrowDown
         }
-        KeyCode.CLIPBOARD_COPY -> {
+        KeyCode.CLIPBOARD_COPY,
+        KeyCode.CLIPBOARD_SELECT_ALL_AND_COPY -> {
             Icons.Default.ContentCopy
         }
         KeyCode.CLIPBOARD_CUT -> {
@@ -303,6 +304,9 @@ fun ComputingEvaluator.computeImageVector(data: KeyData): ImageVector? {
         }
         KeyCode.TOGGLE_AUTOCORRECT -> {
             Icons.Default.FontDownload
+        }
+        KeyCode.TOGGLE_SMARTBAR_VISIBILITY -> {
+            context()?.vectorResource(id = R.drawable.ic_keyboard_keys)
         }
         KeyCode.KANA_SWITCHER -> {
             if (evaluator.state.isKanaKata) {

@@ -803,6 +803,12 @@
         "label": "Western (Samsung)",
         "authors": [ "nettnikl" ],
         "direction": "ltr"
+      },
+      {
+        "id": "western_caco3",
+        "label": "Western (CaCO3)",
+        "authors": [ "CaCO3" ],
+        "direction": "ltr"
       }
     ],
     "symbolsMod": [

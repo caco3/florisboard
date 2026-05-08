@@ -95,6 +95,11 @@ abstract class Key(open val data: AbstractKeyData) {
     open var hintedLabel: String? = null
 
     /**
+     * The computed UI hint ImageVector of this key. Used when the hint has an icon instead of a text label.
+     */
+    open var hintedImageVector: ImageVector? = null
+
+    /**
      * The computed ImageVector of this key. This value is used by the keyboard view to temporarily save the
      * ImageVector for UI rendering and should not be set manually.
      */

@@ -16,6 +16,21 @@
         { "$": "auto_text_key", "code":  231, "label": "ç" }
       ]
     },
+    "g": {
+      "relevant": [
+        { "$": "auto_text_key", "code": 38, "label": "&" }
+      ]
+    },
+    "s": {
+      "relevant": [
+        { "$": "case_selector",
+          "lower": { "code":  223, "label": "ß" },
+          "upper": { "code": 7838, "label": "ẞ" }
+        },
+        { "$": "auto_text_key", "code":  353, "label": "š" },
+        { "$": "auto_text_key", "code":  347, "label": "ś" }
+      ]
+    },
     "e": {
       "relevant": [
         { "$": "auto_text_key", "code":  233, "label": "é" },
@@ -32,6 +47,20 @@
         { "$": "auto_text_key", "code":  239, "label": "ï" },
         { "$": "auto_text_key", "code":  238, "label": "î" },
         { "$": "auto_text_key", "code":  299, "label": "ī" }
+      ]
+    },
+    "k": {
+      "relevant": [
+        { "$": "auto_text_key", "code":  91, "label": "[" },
+        { "$": "auto_text_key", "code": 123, "label": "{" },
+        { "$": "auto_text_key", "code":  60, "label": "<" }
+      ]
+    },
+    "l": {
+      "relevant": [
+        { "$": "auto_text_key", "code":  93, "label": "]" },
+        { "$": "auto_text_key", "code": 125, "label": "}" },
+        { "$": "auto_text_key", "code":  62, "label": ">" }
       ]
     },
     "n": {
@@ -51,15 +80,8 @@
         { "$": "auto_text_key", "code":  244, "label": "ô" }
       ]
     },
-    "s": {
-      "relevant": [
-        { "$": "case_selector",
-          "lower": { "code":  223, "label": "ß" },
-          "upper": { "code": 7838, "label": "ẞ" }
-        },
-        { "$": "auto_text_key", "code":  353, "label": "š" },
-        { "$": "auto_text_key", "code":  347, "label": "ś" }
-      ]
+    "ü": {
+      "main": { "$": "auto_text_key", "code": 232, "label": "è" }
     },
     "u": {
       "relevant": [
@@ -69,8 +91,15 @@
         { "$": "auto_text_key", "code":  250, "label": "ú" }
       ]
     },
-    "~right": {
-      "main": { "code":   44, "label": "," },
+    "~enter": {
+      "main": { "code": -213, "label": "ime_ui_mode_clipboard", "type": "system_gui" },
+      "relevant": [
+        { "code": -212, "label": "ime_ui_mode_media", "type": "system_gui" },
+        { "code": -112, "label": "compact_layout_to_right", "type": "system_gui" }
+      ]
+    },
+    "~left": {
+      "main": { "code": -301, "label": "settings", "type": "system_gui" },
       "relevant": [
         { "code":   38, "label": "&" },
         { "code":   37, "label": "%" },

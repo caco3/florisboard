@@ -144,7 +144,8 @@
       "currencySet": "org.florisboard.currencysets:euro",
       "popupMapping": "org.florisboard.localization:de-CH",
       "preferred": {
-        "characters": "org.florisboard.layouts:swiss_german"
+        "characters": "org.florisboard.layouts:swiss_german2",
+        "symbols": "org.florisboard.layouts:western_caco3"
       }
     },
     {
