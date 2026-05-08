@@ -19,6 +19,9 @@
     "d": {
       "main": { "$": "auto_text_key", "code": 64, "label": "@" }
     },
+    "g": {
+      "main": { "$": "auto_text_key", "code": 35, "label": "#" }
+    },
     "s": {
       "relevant": [
         { "$": "case_selector",
