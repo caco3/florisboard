@@ -805,8 +805,8 @@
         "direction": "ltr"
       },
       {
-        "id": "swiss_german2",
-        "label": "Swiss German (QWERTZ, GBoard)",
+        "id": "western_caco3",
+        "label": "Western (CaCO3)",
         "authors": [ "CaCO3" ],
         "direction": "ltr"
       }
