@@ -141,6 +141,41 @@ To sign the APK, configure a keystore in `app/build.gradle.kts` or pass signing 
 app/build/outputs/apk/release/app-release.apk
 ```
 
+### Prepare your device for deployment
+
+#### USB debugging
+
+1. **Enable Developer Options** — Settings → About phone → tap **Build number** 7 times.
+2. **Enable USB debugging** — Settings → System → Developer options → turn on **USB debugging**.
+3. Plug in via USB. Tap **Allow** on the *"Allow USB debugging?"* dialog that appears on the phone.
+4. Verify ADB sees the device:
+   ```bash
+   adb devices
+   # expected:  <serial>    device
+   ```
+
+> [!TIP]
+> If the device shows as `unauthorized`, unlock the phone screen and accept the dialog.
+
+#### Wireless debugging (Android 11+, no USB required)
+
+1. **Enable Wireless debugging** — Settings → System → Developer options → Wireless debugging → enable it.
+2. Tap **Pair device with pairing code**. The screen shows a host:port and a 6-digit code.
+3. On your machine, pair once:
+   ```bash
+   adb pair <ip>:<pairing-port>
+   # enter the 6-digit code when prompted
+   ```
+4. After pairing, the main Wireless debugging screen shows a separate **IP address & port** for the active connection. Connect to it:
+   ```bash
+   adb connect <ip>:<port>
+   adb devices   # expected:  <ip>:<port>    device
+   ```
+5. Pairing survives reboots. After a reboot just repeat step 4 (`adb connect`) — no re-pairing needed.
+
+> [!NOTE]
+> Phone and machine must be on the same Wi-Fi network. Corporate or guest networks with client isolation will block the connection.
+
 ### Install directly to a connected device / emulator
 
 A convenience script is included that builds the debug APK and installs it in one step:
@@ -149,7 +184,11 @@ A convenience script is included that builds the debug APK and installs it in on
 ./deploy.sh
 ```
 
-The script will error clearly if no device is connected, or if multiple devices are attached (set `ANDROID_SERIAL` to disambiguate in that case).
+The script exits with a clear error if no device is connected. If multiple devices are attached, set `ANDROID_SERIAL` to disambiguate:
+
+```bash
+ANDROID_SERIAL=<serial> ./deploy.sh
+```
 
 Alternatively, run the Gradle task directly:
 
