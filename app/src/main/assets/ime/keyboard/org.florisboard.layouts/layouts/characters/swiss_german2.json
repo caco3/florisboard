@@ -11,7 +11,9 @@
     { "$": "auto_text_key", "code":  111, "label": "o" },
     { "$": "auto_text_key", "code":  112, "label": "p" },
     { "$": "auto_text_key", "code":  252, "label": "ü", "popup": {
-      "main": { "code": -241, "label": "toggle_smartbar_visibility", "type": "system_gui" }
+      "relevant": [
+        { "$": "auto_text_key", "code":  232, "label": "è" }
+      ]
     } }
   ],
   [

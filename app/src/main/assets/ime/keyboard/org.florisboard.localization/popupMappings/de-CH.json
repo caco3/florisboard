@@ -11,6 +11,9 @@
         { "$": "auto_text_key", "code":  225, "label": "á" }
       ]
     },
+    "ä": {
+      "main": { "$": "auto_text_key", "code":  235, "label": "ë" }
+    },
     "c": {
       "relevant": [
         { "$": "auto_text_key", "code":  231, "label": "ç" }
