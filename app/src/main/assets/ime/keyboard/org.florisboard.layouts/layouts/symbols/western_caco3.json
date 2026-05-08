@@ -67,7 +67,8 @@
         ]
       } }
     },
-    { "code":   47, "label": "/" }
+    { "code":   47, "label": "/" },
+    { "code":  235, "label": "ë", "type": "character" }
   ],
   [
     { "code":   42, "label": "*", "popup": {

@@ -273,7 +273,6 @@ class LayoutManager(context: Context) {
                 addRowHints(row, symbolRow, KeyType.NUMERIC)
             }
             // all other symbols are added bottom-aligned
-            flogWarning(LogTopic.LAYOUT_MANAGER) { "DEBUG hint alignment: computedArrangement.size=${computedArrangement.size} symbolsComputedArrangement.size=${symbolsComputedArrangement.size}" }
             val rOffset = computedArrangement.size - symbolsComputedArrangement.size
             for ((r, row) in computedArrangement.withIndex()) {
                 if (r < rOffset) {
