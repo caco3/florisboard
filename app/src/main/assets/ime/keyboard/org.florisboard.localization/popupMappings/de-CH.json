@@ -34,6 +34,20 @@
         { "$": "auto_text_key", "code":  299, "label": "ī" }
       ]
     },
+    "k": {
+      "relevant": [
+        { "$": "auto_text_key", "code":  91, "label": "[" },
+        { "$": "auto_text_key", "code": 123, "label": "{" },
+        { "$": "auto_text_key", "code":  60, "label": "<" }
+      ]
+    },
+    "l": {
+      "relevant": [
+        { "$": "auto_text_key", "code":  93, "label": "]" },
+        { "$": "auto_text_key", "code": 125, "label": "}" },
+        { "$": "auto_text_key", "code":  62, "label": ">" }
+      ]
+    },
     "n": {
       "relevant": [
         { "$": "auto_text_key", "code":  241, "label": "ñ" },
