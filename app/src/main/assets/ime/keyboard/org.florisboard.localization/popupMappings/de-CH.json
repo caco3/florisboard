@@ -91,7 +91,7 @@
         { "$": "auto_text_key", "code":  250, "label": "ú" }
       ]
     },
-    "~right": {
+    "~left": {
       "main": { "code": -301, "label": "settings", "type": "system_gui" },
       "relevant": [
         { "code":   38, "label": "&" },
