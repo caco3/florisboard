@@ -254,14 +254,14 @@ class TextKey(override val data: AbstractKeyData) : Key(data) {
                     computedHintData = hintData
                 } else {
                     val mainData = computedPopups.main
-                    if (mainData != null) {
-                        val mainLabel = mainData.asString(isForDisplay = true)
-                        if (mainLabel.isNotEmpty()) {
-                            hintedLabel = mainLabel
+                    if (mainData != null && mainData.code < 0) {
+                        val icon = evaluator.computeImageVector(mainData)
+                        if (icon != null) {
+                            hintedImageVector = icon
                             computedHintData = mainData
                         } else {
-                            hintedImageVector = evaluator.computeImageVector(mainData)
-                            computedHintData = mainData
+                            hintedLabel = null
+                            computedHintData = TextKeyData.UNSPECIFIED
                         }
                     } else {
                         hintedLabel = null
