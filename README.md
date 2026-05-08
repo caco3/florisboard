@@ -85,6 +85,150 @@ Feature roadmap: See [ROADMAP.md](ROADMAP.md)
 Want to contribute to FlorisBoard? That's great to hear! There are lots of
 different ways to help out, please see the [contribution guidelines](CONTRIBUTING.md) for more info.
 
+## Building and deploying locally
+
+### Prerequisites
+
+| Tool | Required version |
+|------|-----------------|
+| JDK | 17 |
+| Android SDK (compile) | API 36 |
+| Android NDK | 29.0.14206865 |
+| CMake | 4.1.2 (via Android SDK, see below) |
+| Clang | 15+ |
+| Rust / rustup | 1.28.2+ (toolchain 1.93.0) |
+| Git | any recent version |
+
+The easiest way to get the Android SDK, NDK, and CMake is through **Android Studio** (or IntelliJ IDEA with the Android + Compose plugins). If installing manually, also install CMake through `sdkmanager`:
+
+```bash
+sdkmanager "cmake;4.1.2"
+```
+
+> [!IMPORTANT]
+> AGP requires CMake to be installed **inside the Android SDK** — the system CMake is not used.
+
+Rust can be installed via [rustup](https://www.rust-lang.org/tools/install).
+
+> [!NOTE]
+> IntelliJ IDEA users must enable **Future AGP Versions** support for AGP 9.0.0 to work.
+> See [this YouTrack comment](https://youtrack.jetbrains.com/issue/IDEA-348937/2024.1-Beta-missing-option-to-enable-sync-with-future-AGP-versions#focus=Comments-27-11721710.0-0) for instructions.
+
+### Clone the repository
+
+```bash
+git clone https://github.com/florisboard/florisboard.git
+cd florisboard
+```
+
+### Build a debug APK (development / sideload)
+
+```bash
+./gradlew assembleDebug
+```
+
+The resulting APK is written to:
+
+```
+app/build/outputs/apk/debug/app-debug.apk
+```
+
+> [!NOTE]
+> The debug build appends `.debug` to the application ID (`dev.patrickgold.florisboard.debug`), so it installs alongside the release version without conflicts.
+
+### Build a release APK
+
+Unsigned (for local testing):
+
+```bash
+./gradlew assembleRelease
+```
+
+To sign the APK, configure a keystore in `app/build.gradle.kts` or pass signing properties on the command line, then run the same command. The output is at:
+
+```
+app/build/outputs/apk/release/app-release.apk
+```
+
+### Prepare your device for deployment
+
+#### USB debugging
+
+1. **Enable Developer Options** — Settings → About phone → tap **Build number** 7 times.
+2. **Enable USB debugging** — Settings → System → Developer options → turn on **USB debugging**.
+3. Plug in via USB. Tap **Allow** on the *"Allow USB debugging?"* dialog that appears on the phone.
+4. Verify ADB sees the device:
+   ```bash
+   adb devices
+   # expected:  <serial>    device
+   ```
+
+> [!TIP]
+> If the device shows as `unauthorized`, unlock the phone screen and accept the dialog.
+
+#### Wireless debugging (Android 11+, no USB required)
+
+1. **Enable Wireless debugging** — Settings → System → Developer options → Wireless debugging → enable it.
+2. Tap **Pair device with pairing code**. The screen shows a host:port and a 6-digit code.
+3. On your machine, pair once:
+   ```bash
+   adb pair <ip>:<pairing-port>
+   # enter the 6-digit code when prompted
+   ```
+4. After pairing, the main Wireless debugging screen shows a separate **IP address & port** for the active connection. Connect to it:
+   ```bash
+   adb connect <ip>:<port>
+   adb devices   # expected:  <ip>:<port>    device
+   ```
+5. Pairing survives reboots. After a reboot just repeat step 4 (`adb connect`) — no re-pairing needed.
+
+> [!NOTE]
+> Phone and machine must be on the same Wi-Fi network. Corporate or guest networks with client isolation will block the connection.
+
+### Install directly to a connected device / emulator
+
+A convenience script is included that cleans, builds the debug APK, and installs it in one step:
+
+```bash
+./deploy.sh
+```
+
+The script always runs `clean` first to avoid stale incremental build state. It exits with a clear error if no device is connected. If multiple devices are attached, set `ANDROID_SERIAL` to disambiguate:
+
+```bash
+ANDROID_SERIAL=<serial> ./deploy.sh
+```
+
+Alternatively, run the Gradle task directly:
+
+```bash
+./gradlew installDebug
+```
+
+Verify the installation succeeded:
+
+```bash
+adb shell pm list packages | grep florisboard
+```
+
+### Enable FlorisBoard after installation
+
+1. Open **Settings → System → Language & Input → On-screen keyboard** (path may vary by manufacturer).
+2. Enable **FlorisBoard** in the keyboard list.
+3. Switch to FlorisBoard from the keyboard selector in any text field.
+
+### Run unit tests
+
+```bash
+./gradlew test
+```
+
+### Clean the build
+
+```bash
+./gradlew clean
+```
+
 ## Addons Store
 The official [Addons Store](https://beta.addons.florisboard.org) offers the possibility for the community to share and download FlorisBoard extensions.
 Instructions on how to publish addons can be found [here](https://github.com/florisboard/florisboard/wiki/How-to-publish-on-FlorisBoard-Addons).
