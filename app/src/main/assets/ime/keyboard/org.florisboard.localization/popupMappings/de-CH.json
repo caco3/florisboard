@@ -51,7 +51,6 @@
       ]
     },
     "s": {
-      "main": { "code":   35, "label": "#" },
       "relevant": [
         { "$": "auto_text_key", "code":  353, "label": "š" },
         { "$": "auto_text_key", "code":  347, "label": "ś" }
