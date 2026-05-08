@@ -1,6 +1,6 @@
 [
   [
-    { "code":  -31, "label": "clipboard_copy", "type": "system_gui" },
+    { "code":  -35, "label": "clipboard_select_all", "type": "system_gui" },
     { "code":  -33, "label": "clipboard_paste", "type": "system_gui" },
     { "code": -801, "label": "currency_slot_1", "popup": {
       "main": { "code": -802, "label": "currency_slot_2" },
