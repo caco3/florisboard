@@ -31,12 +31,7 @@
         { "$": "auto_text_key", "code":  233, "label": "é" }
       ]
     } },
-    { "$": "auto_text_key", "code":  228, "label": "ä", "popup": {
-      "main": { "$": "auto_text_key", "code":  235, "label": "ë" },
-      "relevant": [
-        { "$": "auto_text_key", "code":  224, "label": "à" }
-      ]
-    } }
+    { "$": "auto_text_key", "code":  228, "label": "ä" }
   ],
   [
     { "$": "auto_text_key", "code":  121, "label": "y" },
