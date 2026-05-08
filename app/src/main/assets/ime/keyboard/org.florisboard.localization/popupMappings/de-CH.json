@@ -16,11 +16,10 @@
         { "$": "auto_text_key", "code":  231, "label": "ç" }
       ]
     },
-    "d": {
-      "main": { "$": "auto_text_key", "code": 64, "label": "@" }
-    },
     "g": {
-      "main": { "$": "auto_text_key", "code": 35, "label": "#" }
+      "relevant": [
+        { "$": "auto_text_key", "code": 38, "label": "&" }
+      ]
     },
     "s": {
       "relevant": [
