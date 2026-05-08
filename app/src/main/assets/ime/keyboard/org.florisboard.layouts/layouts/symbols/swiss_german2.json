@@ -1,6 +1,18 @@
 [
   [
     { "code":   64, "label": "@" },
+    { "code":   35, "label": "#" },
+    { "code": -801, "label": "currency_slot_1" },
+    { "code":   37, "label": "%" },
+    { "code":   38, "label": "&" },
+    { "code":   45, "label": "-" },
+    { "code":   43, "label": "+" },
+    { "code":   40, "label": "(" },
+    { "code":   41, "label": ")" },
+    { "code":   47, "label": "/" }
+  ],
+  [
+    { "code":   64, "label": "@" },
     { "code":   35, "label": "#", "popup": {
       "main": { "code": 8470, "label": "№" }
     } },
