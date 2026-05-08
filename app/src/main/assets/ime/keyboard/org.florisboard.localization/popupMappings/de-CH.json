@@ -13,7 +13,13 @@
     },
     "c": {
       "relevant": [
-        { "$": "auto_text_key", "code":  231, "label": "ç" }
+        { "$": "auto_text_key", "code":  231, "label": "ç" },
+        { "code": -31, "label": "clipboard_copy", "type": "system_gui" }
+      ]
+    },
+    "v": {
+      "relevant": [
+        { "code": -33, "label": "clipboard_paste", "type": "system_gui" }
       ]
     },
     "e": {
