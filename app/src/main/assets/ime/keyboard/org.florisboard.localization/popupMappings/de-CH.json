@@ -91,6 +91,13 @@
         { "$": "auto_text_key", "code":  250, "label": "ú" }
       ]
     },
+    "~enter": {
+      "main": { "code": -213, "label": "ime_ui_mode_clipboard", "type": "system_gui" },
+      "relevant": [
+        { "code": -212, "label": "ime_ui_mode_media", "type": "system_gui" },
+        { "code": -112, "label": "compact_layout_to_right", "type": "system_gui" }
+      ]
+    },
     "~left": {
       "main": { "code": -301, "label": "settings", "type": "system_gui" },
       "relevant": [
