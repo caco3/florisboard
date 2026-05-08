@@ -36,6 +36,7 @@
     { "id": "cs", "authors": [ "stefan-misik" ] },
     { "id": "da", "authors": [ "patrickgold" ] },
     { "id": "de", "authors": [ "patrickgold" ] },
+    { "id": "de-CH", "authors": [ "CaCO3" ] },
     { "id": "de-DE-neobone", "authors": [ "ostrya" ] },
     { "id": "el", "authors": [ "tsiflimagas" ] },
     { "id": "en", "authors": [ "patrickgold" ] },
@@ -141,7 +142,7 @@
       "languageTag": "de-CH",
       "composer": "org.florisboard.composers:appender",
       "currencySet": "org.florisboard.currencysets:euro",
-      "popupMapping": "org.florisboard.localization:de",
+      "popupMapping": "org.florisboard.localization:de-CH",
       "preferred": {
         "characters": "org.florisboard.layouts:swiss_german"
       }

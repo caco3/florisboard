@@ -419,6 +419,12 @@
         "direction": "ltr"
       },
       {
+        "id": "swiss_german2",
+        "label": "Swiss German (QWERTZ, GBoard)",
+        "authors": [ "CaCO3" ],
+        "direction": "ltr"
+      },
+      {
         "id": "swiss_italian",
         "label": "Swiss Italian (QWERTZ)",
         "authors": [ "patrickgold" ],
