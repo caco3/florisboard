@@ -9,7 +9,8 @@
     { "code":   43, "label": "+" },
     { "code":   40, "label": "(" },
     { "code":   41, "label": ")" },
-    { "code":   47, "label": "/" }
+    { "code":   47, "label": "/" },
+    { "code":  235, "label": "ë", "type": "character" }
   ],
   [
     { "code":   64, "label": "@" },
@@ -79,8 +80,7 @@
         ]
       } }
     },
-    { "code":   47, "label": "/" },
-    { "code":  235, "label": "ë", "type": "character" }
+    { "code":   47, "label": "/" }
   ],
   [
     { "code":   42, "label": "*", "popup": {
