@@ -803,6 +803,12 @@
         "label": "Western (Samsung)",
         "authors": [ "nettnikl" ],
         "direction": "ltr"
+      },
+      {
+        "id": "swiss_german2",
+        "label": "Swiss German (QWERTZ, GBoard)",
+        "authors": [ "CaCO3" ],
+        "direction": "ltr"
       }
     ],
     "symbolsMod": [
@@ -828,12 +834,6 @@
         "id": "neo2",
         "label": "Neo2",
         "authors": [ "ostrya" ],
-        "direction": "ltr"
-      },
-      {
-        "id": "swiss_german2",
-        "label": "Swiss German (QWERTZ, GBoard)",
-        "authors": [ "CaCO3" ],
         "direction": "ltr"
       }
     ],
