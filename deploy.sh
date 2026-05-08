@@ -30,7 +30,7 @@ fi
 # Build debug APK
 # ---------------------------------------------------------------------------
 echo "==> Building debug APK..."
-"$SCRIPT_DIR/gradlew" assembleDebug
+"$SCRIPT_DIR/gradlew" clean assembleDebug
 
 APK="$SCRIPT_DIR/app/build/outputs/apk/debug/app-debug.apk"
 
