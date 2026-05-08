@@ -378,8 +378,8 @@ private fun TextKeyButton(
                 attributes = attributes,
                 selector = selector,
                 modifier = Modifier
-                    .size(10.dp)
-                    .align(if (isTelPadKey) BiasAlignment(0.5f, 0f) else Alignment.TopEnd),
+                    .size(14.dp)
+                    .align(if (isTelPadKey) BiasAlignment(0.5f, 0f) else BiasAlignment(0.7f, -0.7f)),
                 imageVector = hintedImageVector,
                 contentDescription = null,
             )
