@@ -470,6 +470,11 @@ class EditorInstance(context: Context) : AbstractEditorInstance(context) {
      *
      * @return True on success, false if an error occurred or the input connection is invalid.
      */
+    fun performClipboardSelectAllAndCopy(): Boolean {
+        if (!performClipboardSelectAll()) return false
+        return performClipboardCopy()
+    }
+
     fun performClipboardSelectAll(): Boolean {
         autoSpace.setInactive()
         phantomSpace.setInactive()
