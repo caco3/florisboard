@@ -301,7 +301,9 @@ class LayoutManager(context: Context) {
     private fun addRowHints(main: Array<TextKey>, hint: Array<TextKey>, hintType: KeyType) {
         for ((k,key) in main.withIndex()) {
             val hintKey = hint.getOrNull(k)?.data?.compute(DefaultComputingEvaluator)
-            if (hintKey?.type != hintType) {
+            val typeMatch = hintKey?.type == hintType ||
+                (hintType == KeyType.CHARACTER && hintKey?.type == KeyType.SYSTEM_GUI)
+            if (!typeMatch) {
                 continue
             }
 

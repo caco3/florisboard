@@ -228,6 +228,7 @@ class TextKey(override val data: AbstractKeyData) : Key(data) {
     fun computeLabelsAndDrawables(evaluator: ComputingEvaluator) {
         label = evaluator.computeLabel(computedData)
         hintedLabel = null
+        hintedImageVector = null
         foregroundImageVector = evaluator.computeImageVector(computedData)
 
         val data = computedData
@@ -249,11 +250,27 @@ class TextKey(override val data: AbstractKeyData) : Key(data) {
             val prefs by FlorisPreferenceStore
             computedPopups.getPopupKeys(prefs.keyboard.keyHintConfiguration()).hint.let { hintData ->
                 if (hintData?.isSpaceKey() == false) {
-                    hintedLabel = hintData.asString(isForDisplay = true)
+                    if (hintData.code < 0) {
+                        hintedImageVector = evaluator.computeImageVector(hintData)
+                    } else {
+                        hintedLabel = hintData.asString(isForDisplay = true)
+                    }
                     computedHintData = hintData
                 } else {
-                    hintedLabel = null
-                    computedHintData = TextKeyData.UNSPECIFIED
+                    val mainData = computedPopups.main
+                    if (mainData != null && mainData.code < 0) {
+                        val icon = evaluator.computeImageVector(mainData)
+                        if (icon != null) {
+                            hintedImageVector = icon
+                            computedHintData = mainData
+                        } else {
+                            hintedLabel = null
+                            computedHintData = TextKeyData.UNSPECIFIED
+                        }
+                    } else {
+                        hintedLabel = null
+                        computedHintData = TextKeyData.UNSPECIFIED
+                    }
                 }
             }
         }
