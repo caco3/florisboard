@@ -419,9 +419,9 @@
         "direction": "ltr"
       },
       {
-        "id": "swiss_german2",
-        "label": "Swiss German (QWERTZ, GBoard)",
-        "authors": [ "CaCO3" ],
+        "id": "swiss_german_CaCO3",
+        "label": "Swiss German CaCO3 (QWERTZ)",
+        "authors": [ "caco3" ],
         "direction": "ltr"
       },
       {
