@@ -72,6 +72,27 @@ val FlorisImeThemeBaseStyle = SnyggStylesheet.v2 {
         background = `var`("--primary-variant")
         foreground = `var`("--on-surface")
     }
+    // Special keys (shift, backspace, numbers, smileys) - distinct gray
+    FlorisImeUi.Key.elementName(FlorisImeUi.Attr.Code to listOf(
+        KeyCode.SHIFT,
+        KeyCode.DELETE,
+        KeyCode.VIEW_SYMBOLS,
+        KeyCode.VIEW_SYMBOLS2,
+        KeyCode.IME_UI_MODE_MEDIA,
+    )) {
+        background = `var`("--surface-variant")
+        foreground = `var`("--on-surface")
+    }
+    FlorisImeUi.Key.elementName(FlorisImeUi.Attr.Code to listOf(
+        KeyCode.SHIFT,
+        KeyCode.DELETE,
+        KeyCode.VIEW_SYMBOLS,
+        KeyCode.VIEW_SYMBOLS2,
+        KeyCode.IME_UI_MODE_MEDIA,
+    ), selector = SnyggSelector.PRESSED) {
+        background = `var`("--background-variant")
+        foreground = `var`("--on-surface")
+    }
     FlorisImeUi.Key.elementName(FlorisImeUi.Attr.Code to listOf(KeyCode.SPACE)) {
         background = `var`("--surface")
         foreground = `var`("--on-surface")
