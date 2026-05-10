@@ -88,7 +88,7 @@
     "foreground": "var(--on-surface)"
   },
   "key[code=-7,-11,-202,-203,-212]": {
-    "background": "var(--surface-variant)",
+    "background": "var(--background)",
     "foreground": "var(--on-surface)"
   },
   "key[code=-7,-11,-202,-203,-212]:pressed": {
