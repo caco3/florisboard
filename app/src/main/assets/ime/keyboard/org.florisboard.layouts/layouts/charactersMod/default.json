@@ -17,6 +17,11 @@
     { "code":   46, "label": ".", "groupId": 2, "popup": {
       "main": { "code": -241, "label": "⬆", "type": "system_gui" }
     } },
+    { "code":  252, "label": "ü", "popup": {
+      "relevant": [
+        { "code":  232, "label": "è" }
+      ]
+    } },
     { "code":   10, "label": "enter", "groupId": 3, "type": "enter_editing" }
   ]
 ]

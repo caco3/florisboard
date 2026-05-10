@@ -149,6 +149,16 @@
       }
     },
     {
+      "languageTag": "de-CH-caco3",
+      "composer": "org.florisboard.composers:appender",
+      "currencySet": "org.florisboard.currencysets:euro",
+      "popupMapping": "org.florisboard.localization:de-CH",
+      "preferred": {
+        "characters": "org.florisboard.layouts:swiss_german_CaCO3",
+        "symbols": "org.florisboard.layouts:western_caco3"
+      }
+    },
+    {
       "languageTag": "de-DE-neobone",
       "composer": "org.florisboard.composers:appender",
       "currencySet": "org.florisboard.currencysets:euro",
