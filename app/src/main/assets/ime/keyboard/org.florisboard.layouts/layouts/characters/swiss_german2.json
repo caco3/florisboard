@@ -31,10 +31,8 @@
     { "$": "auto_text_key", "code":   98, "label": "b" },
     { "$": "auto_text_key", "code":  110, "label": "n" },
     { "$": "auto_text_key", "code":  109, "label": "m" },
-    { "$": "auto_text_key", "code":  246, "label": "ö", "popup": {
-      "relevant": [
-        { "$": "auto_text_key", "code":  233, "label": "é" }
-      ]
-    } }
+    { "$": "auto_text_key", "code":  246, "label": "ö" },
+    { "code": 0, "type": "placeholder" },
+    { "code": 0, "type": "placeholder" }
   ]
 ]

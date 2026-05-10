@@ -80,6 +80,12 @@
         { "$": "auto_text_key", "code":  244, "label": "ô" }
       ]
     },
+    "ä": {
+      "main": { "$": "auto_text_key", "code": 235, "label": "ë" }
+    },
+    "ö": {
+      "main": { "$": "auto_text_key", "code": 233, "label": "é" }
+    },
     "ü": {
       "main": { "$": "auto_text_key", "code": 232, "label": "è" }
     },
