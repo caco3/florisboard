@@ -21,11 +21,7 @@
     { "$": "auto_text_key", "code":  106, "label": "j" },
     { "$": "auto_text_key", "code":  107, "label": "k" },
     { "$": "auto_text_key", "code":  108, "label": "l" },
-    { "$": "auto_text_key", "code":  246, "label": "ö", "popup": {
-      "relevant": [
-        { "$": "auto_text_key", "code":  233, "label": "é" }
-      ]
-    } }
+    { "$": "auto_text_key", "code":  228, "label": "ä" }
   ],
   [
     { "$": "auto_text_key", "code":  121, "label": "y" },
@@ -35,6 +31,10 @@
     { "$": "auto_text_key", "code":   98, "label": "b" },
     { "$": "auto_text_key", "code":  110, "label": "n" },
     { "$": "auto_text_key", "code":  109, "label": "m" },
-    { "$": "auto_text_key", "code":  228, "label": "ä" }
+    { "$": "auto_text_key", "code":  246, "label": "ö", "popup": {
+      "relevant": [
+        { "$": "auto_text_key", "code":  233, "label": "é" }
+      ]
+    } }
   ]
 ]
