@@ -806,8 +806,8 @@
       },
       {
         "id": "western_caco3",
-        "label": "Western (CaCO3)",
-        "authors": [ "CaCO3" ],
+        "label": "Western CaCO3",
+        "authors": [ "caco3" ],
         "direction": "ltr"
       }
     ],
