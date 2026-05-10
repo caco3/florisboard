@@ -88,11 +88,11 @@
     "foreground": "var(--on-surface)"
   },
   "key[code=-7,-11,-202,-203,-212]": {
-    "background": "var(--background)",
+    "background": "#1565c0",
     "foreground": "var(--on-surface)"
   },
   "key[code=-7,-11,-202,-203,-212]:pressed": {
-    "background": "var(--background-variant)",
+    "background": "#0d47a1",
     "foreground": "var(--on-surface)"
   },
   "key[code=32]": {
