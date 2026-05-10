@@ -8,6 +8,15 @@ export PATH="$JAVA_HOME/bin:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# -- Arguments ---------------------------------------------------------------
+CLEAN_BUILD=false
+while getopts ":c" opt; do
+    case $opt in
+        c) CLEAN_BUILD=true ;;
+        *) echo "Usage: $0 [-c]" >&2; exit 1 ;;
+    esac
+done
+
 # -- Pre-flight: require a connected device ----------------------------------
 device_count=$(adb devices | tail -n +2 | grep -c 'device$' || true)
 
@@ -23,8 +32,13 @@ if [[ "$device_count" -gt 1 ]] && [[ -z "${ANDROID_SERIAL:-}" ]]; then
 fi
 
 # -- Build -------------------------------------------------------------------
-echo "==> Building debug APK..."
-"$SCRIPT_DIR/gradlew" clean assembleDebug
+if [[ "$CLEAN_BUILD" == true ]]; then
+    echo "==> Building debug APK (clean)..."
+    "$SCRIPT_DIR/gradlew" clean assembleDebug
+else
+    echo "==> Building debug APK..."
+    "$SCRIPT_DIR/gradlew" assembleDebug
+fi
 
 APK="$SCRIPT_DIR/app/build/outputs/apk/debug/app-debug.apk"
 
