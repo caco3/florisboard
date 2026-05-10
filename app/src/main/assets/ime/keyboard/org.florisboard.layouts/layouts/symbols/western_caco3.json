@@ -93,6 +93,8 @@
       "relevant": [
         { "code": 8253, "label": "‽" }
       ]
-    } }
+    } },
+    { "code": 0, "type": "placeholder" },
+    { "code":  235, "label": "ë", "type": "character" }
   ]
 ]
