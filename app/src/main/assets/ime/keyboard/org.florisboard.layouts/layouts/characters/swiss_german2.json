@@ -25,8 +25,7 @@
       "relevant": [
         { "$": "auto_text_key", "code":  233, "label": "é" }
       ]
-    } },
-    { "$": "auto_text_key", "code":  228, "label": "ä" }
+    } }
   ],
   [
     { "$": "auto_text_key", "code":  121, "label": "y" },
@@ -40,6 +39,7 @@
       "relevant": [
         { "$": "auto_text_key", "code":  232, "label": "è" }
       ]
-    } }
+    } },
+    { "$": "auto_text_key", "code":  228, "label": "ä" }
   ]
 ]
